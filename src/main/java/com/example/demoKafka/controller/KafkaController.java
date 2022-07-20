@@ -13,8 +13,8 @@ public class KafkaController {
     Producer producer;
 
     @PostMapping(value = "/post")
-    public void sendMessage(@RequestParam ("msg") String msg){
-        producer.publishToTopic(msg);
+    public String sendMessage(@RequestParam ("name") String name){
+       return producer.publishToTopic(name);
 
     }
 
